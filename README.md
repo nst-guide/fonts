@@ -6,6 +6,18 @@ worry about [SDL](https://www.mapbox.com/blog/text-signed-distance-fields/)
 and [gzipped PBFs](https://github.com/mapbox/mapbox-gl-js/issues/830).
 The fonts are deployed to https://free.tilehosting.com/ which also supports concatenating fonts.
 
+## My fork
+
+I haven't tried building these fonts yet, but using the v2.0 release on upstream:
+
+```
+wget https://github.com/openmaptiles/fonts/releases/download/v2.0/v2.0.zip
+unzip v2.0
+cd v2.0
+aws s3 cp . s3://tiles.nst.guide/fonts/ --recursive --content-type application/x-protobuf --content-encoding 'gzip'
+```
+
+
 ## Configure Mapbox GL Style JSON
 
 Your current Mapbox GL Style JSON configuration for `glyphs` will look like this.
